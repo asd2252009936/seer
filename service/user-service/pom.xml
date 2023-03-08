@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>service</artifactId>
+        <groupId>com.longyao</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>user-service</artifactId>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <!--        <docker.image.prefix>longyao</docker.image.prefix>-->
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--    docker        -->
+            <!--            <plugin>-->
+            <!--                <groupId>com.spotify</groupId>-->
+            <!--                <artifactId>docker-maven-plugin</artifactId>-->
+            <!--                <configuration>-->
+            <!--                    &lt;!&ndash; 镜像名称  guoweixin/exam&ndash;&gt;-->
+            <!--                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
+            <!--                    &lt;!&ndash;指定标签&ndash;&gt;-->
+            <!--                    <imageTags>-->
+            <!--                        <imageTag>latest</imageTag>-->
+            <!--                    </imageTags>-->
+            <!--                    &lt;!&ndash; 基础镜像jdk 1.8&ndash;&gt;-->
+            <!--                    <baseImage>java:8</baseImage>-->
+            <!--                    &lt;!&ndash; 制作者提供本人信息 &ndash;&gt;-->
+            <!--                    <maintainer>wangchao wangchao@aliyun.com</maintainer>-->
+            <!--                    &lt;!&ndash;切换到/ROOT目录 &ndash;&gt;-->
+            <!--                    <workdir>/ROOT</workdir>-->
+            <!--                    <cmd>["java", "-version"]</cmd>-->
+            <!--                    <entryPoint>["java", "-jar", "${project.build.finalName}.jar"]</entryPoint>-->
+
+            <!--                    &lt;!&ndash; 指定 Dockerfile 路径-->
+            <!--                      <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
+            <!--                   &ndash;&gt;-->
+
+            <!--                    &lt;!&ndash;指定远程 docker api地址&ndash;&gt;-->
+            <!--                    <dockerHost>http://139.9.162.89:2375</dockerHost>-->
+
+            <!--                    &lt;!&ndash; 这里是复制 jar 包到 docker 容器指定目录配置 &ndash;&gt;-->
+            <!--                    <resources>-->
+            <!--                        <resource>-->
+            <!--                            <targetPath>/ROOT</targetPath>-->
+            <!--                            &lt;!&ndash;用于指定需要复制的根目录，${project.build.directory}表示target目录&ndash;&gt;-->
+            <!--                            <directory>${project.build.directory}</directory>-->
+            <!--                            &lt;!&ndash;用于指定需要复制的文件。${project.build.finalName}.jar指的是打包后的jar包文件。&ndash;&gt;-->
+            <!--                            <include>${project.build.finalName}.jar</include>-->
+            <!--                        </resource>-->
+            <!--                    </resources>-->
+            <!--                </configuration>-->
+
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>build-image</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>build</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+
+</project>
